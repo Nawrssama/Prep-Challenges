@@ -245,7 +245,7 @@ describe("Challenge07", () => {
 });
 
 describe("Challenge07", () => {
-  test.skip("cv_filter", () => {
+  test("cv_filter", () => {
     let received = {
       python_devs: 0,
       javaScript_devs: 2,

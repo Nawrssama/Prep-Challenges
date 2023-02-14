@@ -139,59 +139,60 @@ const cvFormatter = (arr) => {
 const applicationsStatics = (arr) => {
     // write your code here
 
-    let res1 = 0;
-    let res2 = 0;
-    let res3 = 0;
-    let res4 = 0;
-    let res5 = 0;
-    let res6 = 0;
+    // let res1 = 0;
+    // let res2 = 0;
+    // let res3 = 0;
+    // let res4 = 0;
+    // let res5 = 0;
+    // let res6 = 0;
 
-    let python_devs = "python_devs: " + res1;
-    let javaScript_devs = "javaScript_devs: " + res2;
-    let dotNet_devs = "dotNet_devs: " + res3;
-    let java_devs = "java_devs: " + res4;
-    let rejectedApplicants = "rejectedApplicants: " + res5;
-    let totalApplicants = "totalApplicants: " + res6;
-    let alen = arr.length;
+    // let python_devs = "python_devs: " + res1;
+    // let javaScript_devs = "javaScript_devs: " + res2;
+    // let dotNet_devs = "dotNet_devs: " + res3;
+    // let java_devs = "java_devs: " + res4;
+    // let rejectedApplicants = "rejectedApplicants: " + res5;
+    // let totalApplicants = "totalApplicants: " + res6;
 
-    let resulte = {
-        python_devs,
-        javaScript_devs,
-        dotNet_devs,
-        java_devs,
-        totalApplicants,
-        rejectedApplicants,
+    let result = {
+        python_devs: 0,
+        javaScript_devs: 0,
+        dotNet_devs: 0,
+        java_devs: 0,
+        totalApplicants: 0,
+        rejectedApplicants: 0,
     };
 
     
-
-    for (let i = 0 ; i < alen ; i++ ){
+        
+    for (let i = 0 ; i <arr.length ; i++ ){
+        result.totalApplicants++;
         if (arr[i].yearsOfExperience > 1){
            
             switch (arr[i].tech){
                 case "Python" :
-                    arr[i].resulte.python_devs = "python_devs: " + (res1 += 1) ;
+                    result.python_devs++  ;
                     break;
                 case "JS":
-                    arr[i].resulte.javaScript_devs = "javaScript_devs: " + (res2 += 1);
+                    result.javaScript_devs++;
                     break;
                 case ".Net":
-                    arr[i].resulte.dotNet_devs = "dotNet_devs: " + (res3 += 1);
+                    result.dotNet_devs++;
                     break;
                 case "Java":
-                    arr[i].resulte.java_devs = "java_devs: " + (res4 += 1);
+                    result.java_devs++;
                     break;
                 
             }
         }else if (arr[i].yearsOfExperience <= 1){
-            arr[i].resulte.rejectedApplicants = "rejectedApplicants: " + (res5 += 1);
+            result.rejectedApplicants++;
         }else if (arr[i].firstName == null && arr[i].lastName == null){
-            arr[i].resulte.rejectedApplicants = "rejectedApplicants: " + (res5 += 1);
+            result.rejectedApplicants++;
         }else if (arr[i].firstName == "" && arr[i].lastName == ""){
-            arr[i].resulte.rejectedApplicants = "rejectedApplicants: " + (res5 += 1);
+            result.rejectedApplicants++;
         }
-        arr[i].resulte.totalApplicants = "totalApplicants: " + (res6 += 1);
+        
     }
+        return result;
 };
 // -------------------------------------------------------------------------------------------------------
 
