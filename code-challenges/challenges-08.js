@@ -67,6 +67,13 @@ const customerAndAge = (obj) => {
 
 const getEntries = (obj) => {
   // write your code here
+  let Output = [];
+  for (const [key, value] of Object.entries(obj)){
+
+      Output.push(`${key}: ${value}`);
+      
+  }
+  return Output;
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -105,10 +112,14 @@ const courses = [
   },
 ];
 
-const getInfo = (arr) => {
+const getInfo = (courses) => {
   let coursesName = [];
   let studentsName = [];
   // write your code here
+  for (const course of courses){
+    coursesName.push(course.course);
+    studentsName.push(...course.Students);
+  }
 
   return { coursesName, studentsName };
 };
