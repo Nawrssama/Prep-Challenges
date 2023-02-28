@@ -107,22 +107,8 @@ const cvsFiltration = (arr) => {
 
 const vowelsFiltration = (arr) => {
     // write your code here
-    const vowels = ['a', 'e', 'i', 'o', 'u'];
-    return arr.filter(word => {
-      return !vowels.some(vowel => word.includes(vowel));
-    });
-
-    // let result = arr.filter((char) => !vowels.includes(char));
-    // return result;
-    // let result = arr.filter((char) => {
-    //     let vowels = /[aieou]+/.test(char);
-
-    //     if (vowels !== char) {
-    //         return true;
-    //     }
-    // })
-    // return result;
-
+    const vowels = /[aeiou]/;
+    return arr.filter((e)=> !vowels.test(e) )
 }
 // -------------------------------------------------------------------------------------------------------
 
