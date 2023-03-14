@@ -28,20 +28,20 @@ const recursionPattern = (int1, int2) => {
     const pattern = [];
 
     const buildPattern = (num) => {
-      if (num <= 0) {
+        if (num <= 0) {
+            pattern.push(num);
+            return;
+        }
+
         pattern.push(num);
-        return;
-      }
-  
-      pattern.push(num);
-      buildPattern(num - int2);
-      pattern.push(num);
+        buildPattern(num - int2);
+        pattern.push(num);
     };
-  
+
     buildPattern(int1);
-  
+
     return pattern;
-    
+
 }
 // -------------------------------------------------------------------------------------------------------
 
